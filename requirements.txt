@@ -1,0 +1,23 @@
+# === Core Framework ===
+Django==5.2.6
+
+# === Database Connector (MySQL) ===
+mysqlclient==2.2.4
+
+# === Image and Media Support ===
+Pillow==10.3.0
+
+# === Utilities ===
+asgiref==3.8.1
+sqlparse==0.5.1
+tzdata==2024.2
+
+# === Optional but Recommended ===
+# For environment variable management (if you use .env)
+python-dotenv==1.0.1
+
+# For running the server smoothly on various platforms
+gunicorn==22.0.0
+
+# === Frontend (optional support for static files compression) ===
+whitenoise==6.7.0
