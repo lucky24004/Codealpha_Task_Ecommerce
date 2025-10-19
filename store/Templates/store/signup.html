@@ -1,0 +1,29 @@
+
+{% extends 'store/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="auth-container">
+  <div class="auth-tabs">
+    <a href="{% url 'login' %}" class="tab active">Login</a>
+    <a href="{% url 'signup' %}" class="tab">Sign Up</a>
+  </div>
+  <div class="auth-box">
+    <h2>Create Account</h2>
+    <p>Join us and start shopping today</p>
+    <form method="POST">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit" class="btn-login">Sign Up</button>
+    </form>
+
+    {% if messages %}
+      <ul>
+        {% for message in messages %}
+          <li>{{ message }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}

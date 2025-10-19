@@ -1,0 +1,24 @@
+{% extends 'store/base.html' %}
+{% load static %}
+{% block content %}
+<div class="checkout-page">
+  <h1 class="title">Checkout</h1>
+
+  <div class="checkout-container">
+    <div class="order-summary">
+      <h3>Order Summary</h3>
+      {% for item in order.orderitem_set.all %}
+      <p>{{ item.product.name }} — ₹{{ item.price_at_purchase }} × {{ item.quantity }}</p>
+      {% endfor %}
+      <hr>
+      <p class="total"><strong>Total:</strong> ₹{{ order.total }}</p>
+    </div>
+
+    <div class="payment-box">
+      <h3>Payment Information</h3>
+      <p>This is a demo checkout. Click the button below to place your order!</p>
+      <a class="btn" href="{% url 'product_list' %}">Place Order</a>
+    </div>
+  </div>
+</div>
+{% endblock %}

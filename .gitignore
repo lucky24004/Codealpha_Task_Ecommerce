@@ -1,0 +1,22 @@
+ECHO is on.
+# Python
+_pycache_/
+*.pyc
+*.pyo
+*.pyd
+*.db
+
+# Django
+db.sqlite3
+media/
+staticfiles/
+
+# Environment
+.env
+venv/
+ENV/
+*.log
+
+# IDE
+.vscode/
+.idea/

@@ -1,0 +1,51 @@
+{% extends 'store/base.html' %}
+{% load static %}
+
+{% block content %}
+<h2>My Orders</h2>
+
+{% if orders %}
+  <div class="orders-list">
+    {% for order in orders %}
+      <div class="order-card">
+        <h3>Order #{{ order.id }}</h3>
+        <p>
+          Status:
+          {% if order.status == "PAID" %}
+            <span class="status paid">Paid</span>
+          {% elif order.status == "CANCELLED" %}
+            <span class="status cancelled">Cancelled</span>
+          {% else %}
+            <span class="status pending">Pending</span>
+          {% endif %}
+        </p>
+        <p>Total: ₹{{ order.total }}</p>
+
+        <div class="order-items">
+          {% for item in order.items.all %}
+            <div class="order-item">
+              {% if item.product.image %}
+                <img src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
+              {% endif %}
+              <div>
+                <p>{{ item.product.name }}</p>
+                <p>Qty: {{ item.quantity }}</p>
+                <p>Price: ₹{{ item.price_at_purchase }}</p>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+
+        {% if order.status == "PAID" %}
+          <form method="post" action="{% url 'cancel_order' order.id %}">
+            {% csrf_token %}
+            <button type="submit" class="cancel-btn">Cancel Order</button>
+          </form>
+        {% endif %}
+      </div>
+    {% endfor %}
+  </div>
+{% else %}
+  <p>You haven’t placed any orders yet.</p>
+{% endif %}
+{% endblock %}
