@@ -22,4 +22,4 @@ gunicorn==22.0.0
 # === Frontend (optional support for static files compression) ===
 whitenoise==6.7.0
 
-pip freeze > requirements.txt
+#pip freeze > requirements.txt
