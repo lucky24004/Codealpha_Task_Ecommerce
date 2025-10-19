@@ -244,9 +244,3 @@ Dynamic template rendering
 User authentication & authorization
 
 Clean, responsive frontend design
-
-
-
----
-
-Would you like me to include badges (like Python, Django, GitHub) and a small screenshot preview section for the top of the README (to make it visually stunning on GitHub)?
