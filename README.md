@@ -5,7 +5,15 @@ This project is developed as part of the CodeAlpha Internship Program, showcasin
 
 
 ---
+SAMPLE PICS
+Home 
+![Home Page](ss1.png)
 
+Login page
+![Login Page](ss2.png)
+
+Product Details
+![Product](ss3.png)
 💫 Features
 
 🛒 Customer Features
